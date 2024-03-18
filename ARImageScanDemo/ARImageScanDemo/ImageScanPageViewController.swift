@@ -69,7 +69,11 @@ extension ImageScanPageViewController: ARSCNViewDelegate {
             let height = CGFloat(imageAnchor.referenceImage.physicalSize.height)
             let plane = SCNPlane(width: width, height: height)
             
-            plane.materials.first?.diffuse.contents = UIColor.white
+            let label = UILabel()
+            label.text = "bg1"
+            label.sizeToFit()
+//            plane.materials.first?.diffuse.contents = UIColor.white
+            plane.materials.first?.diffuse.contents = label
             
             let planeNode = SCNNode(geometry: plane)
             
